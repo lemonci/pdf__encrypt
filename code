@@ -1,0 +1,19 @@
+FileDict = dict()
+path = "C:\\Users\\RS\\Desktop\\Monica_Newly Designed Website\\docs\\publication\\article"  
+for FILE in os.listdir(path):
+    split = re.split("[_.]", FILE)
+    ID = split[1]
+    FileDict[ID] = FILE
+    
+from pyPDF2 import PdfFileReader, PdfFileWriter
+for ID in FileDict:
+	path = "C:\\Users\\RS\\Desktop\\Monica_Newly Designed Website\\docs\\publication\\article"
+	with open(ID , "rb") as in_file:
+        input_pdf = PdfFileReader(in_file)
+
+    output_pdf = PdfFileWriter()
+    output_pdf.appendPagesFromReader(input_pdf)
+    output_pdf.encrypt("ceciliaguess")
+
+with open(ID.pdf, "wb") as out_file:
+    output_pdf.write(out_file)
