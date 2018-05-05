@@ -1,5 +1,5 @@
 FileDict = dict()
-path = "C:\\Users\\RS\\Desktop\\Monica_Newly Designed Website\\docs\\publication\\article"  
+path = "C:\\Users\\RS\\Desktop\\"  
 for FILE in os.listdir(path):
     split = re.split("[_.]", FILE)
     ID = split[1]
@@ -7,7 +7,7 @@ for FILE in os.listdir(path):
     
 from pyPDF2 import PdfFileReader, PdfFileWriter
 for ID in FileDict:
-	path = "C:\\Users\\RS\\Desktop\\Monica_Newly Designed Website\\docs\\publication\\article"
+	path = "C:\\Users\\RS\\Desktop\\"
 	with open(ID , "rb") as in_file:
         input_pdf = PdfFileReader(in_file)
 
